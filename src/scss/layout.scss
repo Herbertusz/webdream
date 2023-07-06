@@ -1,0 +1,24 @@
+:root {
+  --icon-fill: white;
+  --icon-stroke: white;
+}
+
+body {
+  background-color: $bg-body;
+  font: {
+    family: Montserrat, Arial, sans-serif;
+    size: 16px;
+  };
+
+  p {
+    color: red;
+  }
+}
+
+%textgradient {
+  background: linear-gradient(to right, $dark-blue, $light-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: $white;
+}

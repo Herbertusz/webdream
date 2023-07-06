@@ -1,0 +1,168 @@
+header {
+  border-bottom: 1px solid $dark-grey;
+  background-color: $bg-body;
+
+  @include media-breakpoint-down(lg) {
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+  }
+
+  .logo {
+    display: block;
+
+    img {
+      float: left;
+      padding: 20px;
+      height: 100px;
+      @include media-breakpoint-down(md) {
+        padding: 20px 10px;
+        height: 80px;
+      }
+    }
+
+    h1 {
+      display: inline-block;
+      margin: 18px 0 0 0;
+      @extend %textgradient;
+      font: {
+        size: 1.8rem;
+        weight: 900;
+      };
+      text-transform: uppercase;
+      @include media-breakpoint-down(md) {
+        font-size: 1.5rem;
+      }
+    }
+
+    h2 {
+      display: inline-block;
+      margin: 0;
+      @extend %textgradient;
+      font: {
+        size: 1.4rem;
+        weight: normal;
+      };
+      @include media-breakpoint-down(md) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .links {
+    padding: 25px;
+    text-align: right;
+
+    @include media-breakpoint-between(md, xl) {
+      padding: 5px 20px 5px 0;
+      width: 480px;
+    }
+
+    a {
+      display: inline-block;
+      margin: 0 15px;
+      color: #193dc9;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .separator {
+      display: inline-block;
+      border-left: 1px solid $dark-grey;
+      width: 0;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    select.language {
+      display: inline-block;
+      margin: 0 15px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: $dark-grey;
+      font: {
+        size: 0.9em;
+        weight: 400;
+      };
+      cursor: pointer;
+
+      option {
+        outline: none;
+      }
+    }
+
+    .icon {
+      --icon-fill: #7d7d7d;
+      --icon-stroke: #7d7d7d;
+      width: 20px;
+      height: 20px;
+
+      &.blue {
+        --icon-fill: #193dc9;
+        --icon-stroke: #193dc9;
+      }
+
+      &.large {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    .request-list {
+      border-width: 0;
+      border-radius: 10px;
+      outline: none;
+      padding: 15px 30px;
+      width: 250px;
+      background: linear-gradient(to right, $dark-blue, $greenish-blue);
+      color: $white;
+      font: {
+        size: 0.8rem;
+        weight: bold;
+      };
+      text-transform: uppercase;
+
+      .icon {
+        --icon-fill: #ffffff;
+        --icon-stroke: #ffffff;
+      }
+    }
+  }
+
+  %hamburgerline {
+    border-radius: 3px;
+    width: 42px;
+    height: 6px;
+    background-color: $dark-blue;
+  }
+
+  .hamburger {
+    position: relative;
+    float: right;
+    margin: 35px 5px 0 0;
+    @extend %hamburgerline;
+    cursor: pointer;
+
+    @include media-breakpoint-between(md, xl) {
+      margin: 50px 20px 0 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -12px;
+      @extend %hamburgerline;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      @extend %hamburgerline;
+    }
+  }
+
+}
